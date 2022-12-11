@@ -164,12 +164,12 @@ class node {
     m_pRef->force_insert(key, value, pMemory);
   }
 
+  static std::atomic<size_t> m_amount;
  private:
   shared_node_ref m_pRef;
   using nodes = std::set<node*, less>;
   nodes m_dependencies;
   size_t m_index;
-  static YAML_CPP_API std::atomic<size_t> m_amount;
 };
 }  // namespace detail
 }  // namespace YAML
